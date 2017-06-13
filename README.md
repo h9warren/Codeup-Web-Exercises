@@ -5,3 +5,5 @@
 
  I'm learning HTML, CSS, JS, JQuery, PHP and some other stuff.
  It's going great. Thank you for asking!
+
+ It's tough understanding GitHub.
