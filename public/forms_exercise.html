@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    form {
+      margin: 50px 50px;
+    }
+    div {
+      margin:10px;
+    }
+    input {
+      font-size: 20px;
+    }
+    textarea{
+      width: 400px;
+      height: 100px;
+    }
+    </style>
+  </head>
+  <body>
+    <header id="top">
+      <h1>Register with Us!</h1>
+      <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong></p>
+      <hr>
+    </header>
+    <form method="POST" action="https://requestb.in/zitdrmzi">
+      <div>
+        <label for="email">Email address</label>
+        <input type="text" id="email" name="emailAddress" placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your email">
+      </div>
+      <div>
+        <h2><label for="myBio">My Bio</label></h2>
+        <textarea name="myBio" id="myBio" placeholder="Tell us about yourself..."></textarea>
+      </div>
+      <div>
+        <h2>How did you hear about us?</h2>
+        <input type="radio" id="billboard" name="about" value="billboard">
+        <label for="billboard">Billboard</label><br>
+        <input type="radio" id="radioAd" name="about" value="radio">
+        <label for="radioAd">Radio Advertisement</label><br>
+        <input type="radio" id="internetAd" name="about" value="internet">
+        <label for="internetAd">Internet Advertisement</label><br>
+        <input type="radio" id="other" name="about" value="other">
+        <label for="other">Other</label><br>
+      </div>
+
+      <div>
+        <label for="browser"><h2>What browser are you using?</h2></label>
+        <select name="browser">
+          <option value="Firefox">Firefox</option>
+          <option value="Safari">Safari</option>
+          <option value="Opera">Opera</option>
+          <option value="Chrome">Chrome</option>
+        </select>
+        <div>
+          <button type="submit">SUBMIT</button>
+        </div>
+      </div>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    header{
+      text-align:center;
+      margin: 0 50px 50px 50px;
+    }
+    form {
+      margin: 50px 50px;
+    }
+    div {
+      margin:10px;
+    }
+    input {
+      font-size: 16px;
+      margin: 5px 5px;
+    }
+    textarea{
+      width: 400px;
+      height: 100px;
+    }
+    label {
+      text-transform: capitalize;
+    }
+    </style>
+  </head>
+  <body>
+    <header id="top">
+      <h1>I WANT PIZZA</h1>
+      <p><strong>Please use the order form below.</strong></p>
+    </header>
+    <form method="POST" action="https://requestb.in/zitdrmzi">
+    <hr>
+    <div>
+      <label for="size"><h2>Select a size</h2></label>
+      <input type="radio" id="small" name="size" value="small"></input>
+      <label for="small">Small–12 inch</label>
+      <input type="radio" id="medium" name="size" value="medium"></input>
+      <label for="medium">Medium–16 inch</label>
+      <input type="radio" id="large" name="size" value="large"></input>
+      <label for="large">Large–22inch</label>
+      <input type="radio" id="mega" name="size" value="mega"></input>
+      <label for="mega">MEGA–too much</label>
+    </div>
+      <br><hr>
+    <div>
+      <h2>Select toppings</h2>
+      <input type="checkbox" id="pepperoni" name="toppings[]" value="pepperoni">
+      <label for="pepperoni">Pepperoni</label>
+      <input type="checkbox" id="mushroom" name="toppings[]" value="mushroom">
+      <label for="mushroom">Mushroom</label>
+      <input type="checkbox" id="onion" name="toppings[]" value="onion">
+      <label for="onion">onion</label>
+      <input type="checkbox" id="sausage" name="toppings[]" value="sausage">
+      <label for="sausage">sausage</label>
+      <input type="checkbox" id="olives" name="toppings[]" value="olives">
+      <label for="olives">olives</label>
+      <input type="checkbox" id="garlic" name="toppings[]" value="garlic">
+      <label for="garlic">garlic</label>
+      <input type="checkbox" id="bell peppers" name="toppings[]" value="bell peppers">
+      <label for="bell peppers">bell peppers</label>
+      <input type="checkbox" id="roasted peppers" name="toppings[]" value="roasted peppers">
+      <label for="roasted peppers">roasted peppers</label><br>
+      <input type="checkbox" id="arugula" name="toppings[]" value="arugula">
+      <label for="arugula">arugula</label>
+      <input type="checkbox" id="fresh mozzarella" name="toppings[]" value="fresh mozzarella">
+      <label for="fresh mozzarella">fresh mozzarella</label>
+      <input type="checkbox" id="sopressata" name="toppings[]" value="sopressata">
+      <label for="sopressata">sopressata</label>
+      <input type="checkbox" id="speck" name="toppings[]" value="speck">
+      <label for="speck">speck</label>
+      <input type="checkbox" id="chocolate" name="toppings[]" value="chocolate">
+      <label for="chocolate">chocolate</label>
+      <input type="checkbox" id="extra salt" name="toppings[]" value="extra salt">
+      <label for="extra salt">extra salt</label>
+      <input type="checkbox" id="wires" name="toppings[]" value="wires">
+      <label for="wires">wires</label>
+      <input type="checkbox" id="anchovies" name="toppings[]" value="anchovies">
+      <label for="anchovies">anchovies</label>
+      <br><br><hr>
+    <div>
+      <h2>WHERE TO?</h2>
+      <label for="name">Pizza Recipient</label><br>
+      <input type="text" id="name" name="name" placeholder="your name" required><br>
+      <label for="address">Address</label><br>
+      <input type="text" id="address" name="address" placeholder="your address" required><br>
+      <input type="text" id="address2" name="address2" placeholder="apartment number" required>
+    </div>
+
+
+    </div>
+    <button type="submit">ORDER</button>
+    <!-- </div>
+    <form method="POST" action="https://requestb.in/zitdrmzi">
+      <div>
+        <label for="email">Email address</label>
+        <input type="text" id="email" name="emailAddress" placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your email">
+      </div>
+      <div>
+        <h2><label for="myBio">My Bio</label></h2>
+        <textarea name="myBio" id="myBio" placeholder="Tell us about yourself..."></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div> -->
+    </form>
+
+  </body>
+</html>

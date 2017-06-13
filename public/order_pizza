@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    form {
+      margin: 50px 50px;
+    }
+    div {
+      margin:10px;
+    }
+    input {
+      font-size: 20px;
+    }
+    textarea{
+      width: 400px;
+      height: 100px;
+    }
+    </style>
+  </head>
+  <body>
+    <header id="top">
+      <h1>Welcome</h1>
+      <p>At Veridian Dynamics, <strong>GET A PIZZA ALREADY!!!</strong></p>
+      <hr>
+    </header>
+    <form method="POST" action="https://requestb.in/zitdrmzi">
+      <div>
+        <label for="email">Email address</label>
+        <input type="text" id="email" name="emailAddress" placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your email">
+      </div>
+      <div>
+        <h2><label for="myBio">My Bio</label></h2>
+        <textarea name="myBio" id="myBio" placeholder="Tell us about yourself..."></textarea>
+      </div>
+      <div>
+        <h2>How did you hear about us?</h2>
+        <input type="radio" id="billboard" name="adtype1">
+        <label for="billboard">Billboard</label><br>
+        <input type="radio" id="radioAd" name="adtype2">
+        <label for="radioAd">Radio Advertisement</label><br>
+        <input type="radio" id="internetAd" name="adtype3">
+        <label for="internetAd">Internet Advertisement</label><br>
+        <input type="radio" id="other" name="adtype4">
+        <label for="other">Other</label><br>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+  </body>
+</html>

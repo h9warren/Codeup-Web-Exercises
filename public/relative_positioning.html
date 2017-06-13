@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Relative POsitioning</title>
+      <style>
+        #container{
+          margin: 50px auto;
+          width: 500px;
+          height: 200px;
+          border: 1px solid #000;
+          position: relative;
+        }
+        #box{
+          background-color: #FFF;
+          position: relative;
+          top: 20px;
+          right: 20px;
+        }
+        #box2{
+          background-color: #FFF;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+        }
+      </style>
+  </head>
+  <body style="height: 1000px;">
+    <div id="container">
+      <div id="box">
+        <img src="https://www.fillmurray.com/g/150/150" alt="">
+      </div>
+      <div id="box2">
+        <img src="https://www.fillmurray.com/g/150/150" alt="">
+      </div>
+    </div>
+  </body>
+</html>

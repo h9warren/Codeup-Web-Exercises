@@ -1,0 +1,56 @@
+
+h1 a {
+  margin-left:15px;
+
+
+}
+.square {
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  font-size: 15px;
+  margin: 10px 40px 50px 10px;
+  position: relative;
+  border: 1px solid black;
+  font-weight: bold;
+  color: white;
+  float: left;
+}
+.square img {
+  top: -40px;
+  right: -40px;
+  position: absolute;
+}
+section#a {
+  position: relative;
+  top: 40px;
+}
+#ribbon{
+  position: fixed;
+  right:0px;
+  top: 0px;
+}
+#red{
+  background-color: red;
+}
+#orange{
+  background-color: orange;
+}
+#yellow{
+  background-color: yellow;
+  color: black;
+}
+#green{
+  background-color: green;
+  clear: both;
+}
+#blue{
+  background-color: blue;
+}
+#purple{
+  background-color: purple;
+}
+.square:nth-child(even);{
+  /*float:left;*/
+  text-size: 26px;
+}

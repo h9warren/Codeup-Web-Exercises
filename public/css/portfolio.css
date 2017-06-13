@@ -1,0 +1,76 @@
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#topnav {
+  background-color: #3aeac2;
+}
+.bottom {
+  margin: 20px auto;
+
+}
+.par-spacing{
+  padding: 3.1em 0;
+}
+.welcome{
+  background-color: black;
+  padding: 15px 30px 15px 30px;
+  height: 400px;
+  background-image: url('/img/do-sharp.jpg');
+  background-size: 100vw;
+}
+.welcome h1{
+  font-size: 72px;
+  color: white;
+  margin-bottom: 15px;
+}
+.welcome-button {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .4em;
+  height: 46px;
+  width: 180px;
+  border-radius: 3px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 40px;
+}
+.col-sm-12>.welcome-text{
+  position: relative;
+  margin: 100px auto;
+  text-align: center;
+  color: white;
+}
+.col-sm-12>.welcome-text p {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .4em;
+}
+.navbar-default {
+  background: none;
+
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+.navbar {
+    padding: 15px 30px 15px 30px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+.circle-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+}

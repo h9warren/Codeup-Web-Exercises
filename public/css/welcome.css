@@ -1,0 +1,97 @@
+header h1 {
+  color:#e20fe2;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+header p {
+  text-align: center;
+  color: #735273;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+/*hr {
+  border: 1px solid #FFF;
+}*/
+
+body {
+  width: auto;
+  background-color: black;
+  background-image: url('/img/flame3.gif');
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: "papyrus";
+  background-position: 0 11%;
+}
+.middle {
+  border-top: .5px solid #562b56;
+  border-bottom: .5px solid #562b56;
+}
+
+.bottom {
+  clear:both;
+  margin-top: 240px;
+}
+.dogs {
+  margin-bottom: 50px;
+}
+.dogs h2 {
+  text-align: center;
+  color: #e20fe2
+  /*font-size: 38px;*/
+}
+
+img {
+  float:left;
+  margin: 0px 10px 10px 0;
+  width: 49%;
+  filter:blur(50%);
+
+}
+img#german{
+  clear:both;
+}
+h2 {
+  text-decoration: underline;
+  color: #afafaf;
+  padding:5px 0 5px 0;
+  font-variant: small-caps;
+}
+a {
+  font-weight:bold;
+}
+.middle {
+  margin-left: 50px;
+}
+.middle li {
+  color: #afafaf;
+  font-variant: small-caps;
+  font-size: 20px;
+  padding:5px 0 5px 0;
+}
+table {
+  color: white;
+  font-variant: small-caps;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0 0 0;
+
+}
+table th {
+  font-size: 26px;
+}
+.bottom p {
+  color: #afafaf;
+  font-variant: small-caps;
+  font-size: 20px;
+  text-align: center;
+}
+a#top {
+  font-size: 30px;
+  /*background-color: red;
+  border: 1px solid white;*/
+  position: relative;
+  text-align: center;
+  left: 35%;

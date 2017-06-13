@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+.row {
+  background-color: #EEE;
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+main.columns {
+  margin: 0 auto;
+  width: 90%;
+
+}
+.column{
+  float:left;
+  margin: 0px;
+  padding: 20px;
+  border: 1px solid black;
+
+}
+.one-half {
+  width: 50%;
+}
+.one-third {
+  width: 33.33%;
+}
+.one-fourth {
+  width: 25%;
+}
+.one-eighth {
+  width: 12.5%;
+}

@@ -1,0 +1,55 @@
+
+h1 a {
+  margin-left:15px;
+  color:purple;
+}
+h1 a:hover {
+  color:blue;
+}
+.square {
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+  margin:10px;
+  position:relative;
+  border: 1px solid black;
+  font-weight: bold;
+  color: white;
+}
+.square:hover {
+  height: 80px;
+  width: 180px;
+  padding: 10px;
+  font-size: 20px;
+  margin:10px;
+  position:relative;
+  border: 1px solid black;
+  font-weight: bold;
+  color: white;
+  margin-left: +30px;
+  transition: height .5s, width .5s, margin .5s ease-in-out;
+}
+#red{
+  background-color: red;
+}
+#orange{
+  background-color: orange;
+  left: 30px;
+}
+#yellow{
+  background-color: yellow;
+  left:60px;
+  color: black;
+}
+#green{
+  background-color: green;
+  left:90px;
+}
+#blue{
+  background-color: blue;
+  left:120px;
+}
+#purple{
+  background-color: purple;
+  left:150px;

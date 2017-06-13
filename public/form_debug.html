@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Please Sign Up</h1>
+    <form method="POST" action="https://requestb.in/1bjc4ww1">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username">
+        <br>
+
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email">
+        <br>
+
+        <label for="password">password</label>
+        <input id="password" type="password" name="password">
+        <br>
+
+        <label for="confirm_password">confirm password</label>
+        <input id="confirm_password" type="password" name="confirm_password">
+        <br>
+
+        <h2>Filing Status</h2>
+
+
+        <input type="radio" id="single" name="filing_status" value="single">
+        <label for="single">Single</label>
+        <br>
+
+        <input type="radio" id="married_joint" name="filing_status" value="married_joint">
+        <label for="married_joint">Married Filing Jointly</label>
+        <br>
+
+        <input type="radio" id="married_separate" name="filing_status" value="married_separate">
+        <label for="married_separate">Married Filing Separately</label>
+        <br>
+
+        <input type="radio" id="hoh" name="filing_status" value="hoh">
+        <label for="hoh">Head of Household</label>
+        <br>
+
+        <h2>This past year I was (check all that apply)</h2>
+
+
+        <input type="checkbox" id="self_employed" name="employment_status[]" value="self_employed">
+        <label for="self_employed">Self - Employed</label>
+        <br>
+
+        <input type="checkbox" id="small_business" name="employment_status[]" value="small_business">
+        <label for="small_business">Employed by a small business (< 50 employees)</label>
+        <br>
+
+        <input type="checkbox" id="large_business" name="employment_status[]" value="large_business">
+        <label for="large_business">Employed by a large business (> 50 employees)</label>
+        <br>
+
+        <h2>What kind of phone do you have</h2>
+
+        <select name="phone type">
+            <option value="android">Android</option>
+            <option value="iphone">iPhone</option>
+            <option value="windows">Windows Phone</option>
+            <option value="other">Other</option>
+        </select>
+
+        <hr>
+
+        <label for="newsletter">Sign Me Up For The Newsletter
+            <input type="checkbox" name="newsletter" id="newsletter" checked>
+        </label>
+    <button type="submit">Submit</button>
+    </form>
+
+
+
+</body>
+</html>

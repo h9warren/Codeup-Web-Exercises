@@ -1,0 +1,21 @@
+.section {
+  width: 700px;
+  margin: 25% 25%;
+}
+.square{
+  height:200px;
+  width:200px;
+  margin: 5px;
+  background-color: black;
+  float: left;
+  transition: 2s;
+  animation-name: square;
+}
+.square:hover{
+  transform: rotateZ(150deg);
+}
+@keyframes square{
+  0% {0deg}
+  50% {}
+  100% {}
+}
