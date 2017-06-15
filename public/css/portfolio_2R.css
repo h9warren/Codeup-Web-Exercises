@@ -1,0 +1,97 @@
+h2,h3, h4, h5, h6, p {
+  font-family: 'Nunito Sans', sans-serif;
+}
+h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #bbb;
+}
+h4 {
+  margin-top: 20px;
+}
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+
+}
+.container {
+  margin: 0px;
+  padding: 0 50px  0 50px ;
+}
+.no-padding {
+  padding: 0;
+}
+.navbar {
+  background:none;
+  position:absolute;
+  z-index: 1;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: .2em;
+}
+
+.navbar a {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  font-weight: 700;
+  color: #BBB;
+}
+.navbar-nav {
+  float: right;
+}
+.navbar-default {
+  border: none;
+
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+  font-weight: 200;
+  color: #BBB;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #BBB;
+}
+
+.res-header {
+  /*background-color: red;*/
+  height: 200px;
+  border-bottom: 1px solid #EEE;
+
+
+}
+.resume-header {
+  position: relative;
+  /*text-align: center;*/
+  bottom: -22%;
+  font-family: 'Abril Fatface', cursive;
+  padding: 0 50px;
+}
+.resume-header > h1 > span {
+    background: linear-gradient(#6200ff, rgba(129, 0, 255, 0.78));
+    -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+    font-size: 72px;
+}
+.emphasis {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .2em;
+    color: #444;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.sidebar {
+  padding: 0 20px 20px 65px;
+  text-align: left;
+  margin-left: 3em;
+}
+.description{
+  padding-top: 20px;
+}
+.bottom-border {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EEE;
+}
