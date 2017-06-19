@@ -127,19 +127,19 @@ switch (color) {
   var number = prompt("Enter a number!");
   var plusHundred = parseInt(number) + 100;
 
-  // if (isNaN(parseFloat(number))) {
-  //   alert("That's not a number!")
-  // } else if (parseInt(number) % 2 != 0) {
-  //   alert("The number is odd!");
-  //   alert("Your number plus 100 equals " + plusHundred +'.');
-  // } else if (parseInt(number) % 2 == 0) {
-  //   alert("The number is even!");
-  //   alert("Your number plus 100 equals " + plusHundred +'.');
-  // } else if (parseInt(number) < 0) {
-  //   alert("Your number is negative!");
-  // } else {
-  //   alert("Your number is positive!");
-  // }
+  if (isNaN(parseFloat(number))) {
+    alert("That's not a number!")
+  } else if (parseInt(number) % 2 != 0) {
+    alert("The number is odd!");
+    alert("Your number plus 100 equals " + plusHundred +'.');
+  } else if (parseInt(number) % 2 == 0) {
+    alert("The number is even!");
+    alert("Your number plus 100 equals " + plusHundred +'.');
+  } else if (parseInt(number) < 0) {
+    alert("Your number is negative!");
+  } else {
+    alert("Your number is positive!");
+  }
 
   if(isNaN(parseFloat(number))){
     alert("Hey, that's not a number!");
@@ -150,9 +150,9 @@ switch (color) {
       alert("Your number is even! Your number plus 100 equals " + (plusHundred) + ".");
     }
     if (parseFloat(number)<0){
-      alert("Your number is negative!");
-    } else{
-      alert("Your number is positive!");
+      alert ("Your number is negative!");
+    } else {
+      alert ("Your number is positive!");
     }
 
     }
