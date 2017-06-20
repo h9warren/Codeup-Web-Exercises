@@ -50,23 +50,26 @@
     var d = new Date();
     var time;
     var due;
+    var dueDate;
+    var transformDate = function () {
+      time = d.getTime();
+      due = time + 1209600000;
+      dueDate = due.toLocaleDateString();
+      return dueDate;
+    };
     var books = [
       {
       title: "Camino Island",
       author: ["Grisham","John"],
       keywords: ["word", "word", "word"],
       available: true,
-      dateAvailable: ["time", "month", "day", "year"],
+      dateAvailable: ["time"],
       rent : function() {
         this.available = false;
-        this.dateAvailable = function (when) {
-          time = d.getTime();
-          due = time + 1209600000;
-          console.log(due);
+        this.dateAvailable = transformDate();
+      }
+      },
 
-        };
-      },
-      },
       {
       title: "Into The Water",
       author: ["Hawkins","Paula"],
