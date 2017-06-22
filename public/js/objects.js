@@ -52,12 +52,10 @@
     var due;
     var dueDate;
     var transformDate = function () {
-      time = d.getTime();
-      due = time + 1209600000;
-      dueDate = due.toLocaleDateString();
+      dueDate = new Date(+new Date + 1209600000);
       return dueDate;
     };
-    var books = [
+      var books = [
       {
       title: "Camino Island",
       author: ["Grisham","John"],
@@ -67,7 +65,12 @@
       rent : function() {
         this.available = false;
         this.dateAvailable = transformDate();
-      }
+      },
+      returned : function() {
+        this.available = true;
+        this.dateAvailable = "now";
+
+      },
       },
 
       {
@@ -75,28 +78,68 @@
       author: ["Hawkins","Paula"],
       keywords: ["word", "word", "word"],
       available: true,
-      dateAvailable: ["time", "month", "day", "year"]
+      dateAvailable: ["time"],
+      rent : function() {
+        this.available = false;
+        this.dateAvailable = transformDate();
+      },
+      returned : function() {
+        this.available = true;
+        this.dateAvailable = "now";
+
+      },
+
       },
       {
       title: "Come Sundown",
       author: ["Roberts","Nora"],
       keywords: ["word", "word", "word"],
       available: true,
-      dateAvailable: ["time", "month", "day", "year"]
+      dateAvailable: ["time", "month", "day", "year"],
+      rent : function() {
+        this.available = false;
+        this.dateAvailable = transformDate();
+      },
+      returned : function() {
+        this.available = true;
+        this.dateAvailable = "now";
+
+      },
+
       },
       {
       title: "Dragon Teeth",
       author: ["Chrichton","Michael"],
       keywords: ["word", "word", "word"],
       available: true,
-      dateAvailable: ["time", "month", "day", "year"]
+      dateAvailable: ["time", "month", "day", "year"],
+      rent : function() {
+        this.available = false;
+        this.dateAvailable = transformDate();
+      },
+      returned : function() {
+        this.available = true;
+        this.dateAvailable = "now";
+
+      },
+
       },
       {
       title: "Love Story",
       author: ["Kingsbury","Karen"],
       keywords: ["word", "word", "word"],
       available: true,
-      dateAvailable: ["time", "month", "day", "year"]
+      dateAvailable: ["time", "month", "day", "year"],
+      rent : function() {
+        this.available = false;
+        this.dateAvailable = transformDate();
+      },
+      returned : function() {
+        this.available = true;
+        this.dateAvailable = "now";
+
+      },
+
       }];
       books.forEach(function (book, index, array) {
         console.log("Book #" + (parseInt(index) + 1));
@@ -104,3 +147,34 @@
         console.log("Author: " + book.author[1] + " " + book.author[0]);
         console.log("---");
       });
+
+      var dogs = [
+        {
+          breed: "string",
+          weightInPounds: 0,
+          age: 0,
+          color: "string",
+          sterilized: true,
+          shotRecords: [
+
+          ],
+          bark : function() {
+            console.log("WOOF");
+          },
+          getOlder : function() {
+            this.age++;
+          },
+          getYounger : function() {
+            this.age--;
+          },
+          fix : function() {
+            this.sterilized = true;
+          },
+          getShot : function() {
+            var shotType = prompt("What was the shot?");
+            var shotDate = prompt("When did you get the shot?");
+            var shotObject = {date: shotDate, shot: shotType};
+            this.shotRecords.push(shotObject);
+          }
+        }
+      ]

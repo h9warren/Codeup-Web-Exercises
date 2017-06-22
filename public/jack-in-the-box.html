@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2 id="title">Jack In The Box</h2><br>
+    <p id="rhyme"></p>
+
+    <script type="text/javascript">
+
+      "use strict";
+      var nurseryRhyme = ["All a-...", "-round the ...", "mulberry ...", "bush, The ...", "monkey ...", "chased the ...", "wea-...", "-sel....", "The monkey ...", "stopped to ...", "pull up his ...", "sock, ...", "Pop! ...", "goes the ...", "wea-...", "-sel."];
+      var cranks = 0;
+      var jackBox = {
+        songPlayed: "any",
+        triggered: false,
+        intervalId: null,
+        popGoes : function () {
+          var intervalId = setInterval(function (){
+            if (cranks > nurseryRhyme.length-1) {
+              clearInterval(intervalId);
+            }
+             else {
+               document.getElementById('rhyme').innerHTML += nurseryRhyme[cranks];
+               cranks++;
+             }
+           }, 1000);
+          }
+      };
+      </script>
+    </body>
+    </html>

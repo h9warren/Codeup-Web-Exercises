@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 style="font-family: Helvetica; font-weight: bold; font-size: 100px; text-align: center" id="softwatch"></h1>
+    <script type="text/javascript">
+
+    
+    var stopWatch =
+    {
+      intervalId: "watch",
+      count: 0,
+      start : function (){
+        var time = 0;
+        var watch = setInterval ( function(){
+          document.getElementById("softwatch").innerHTML = (time.toFixed(2));
+          time += .01;
+        }, 10)
+      },
+      pause : function (){
+        clearInterval(watch);
+      },
+      reset : function (){
+        clearInterval();
+    }
+  };
+
+  </script>
+
+</body>
+</html>
