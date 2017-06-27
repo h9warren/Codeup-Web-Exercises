@@ -38,6 +38,7 @@
 var values = [];
 var field;
 var operation;
+var operationArray = [];
 var numbers = document.getElementsByClassName("number");
 var operators = document.getElementsByClassName("operator");
 var displayed = [0,0];
@@ -65,16 +66,6 @@ function numberGen(){
 
   }
 };
-// function numberGen(){
-//   if (values.length==2) {
-//     calculator.left.value = this.value;
-//     values=[];
-//   } else {
-//     calculator.left.value += this.value;
-//
-//   }
-// };
-
 
 function clear () {
   calculator.left.value = "";
@@ -86,23 +77,26 @@ function result () {
 
 function handleOperator() {
   operation = this.value;
-  if (values.length == 0 || operation == "=") {
+  operationArray.push(operation);
+  console.log(operationArray);
+  if (values.length == 0) {
     values.push(calculator.left.value);
     console.log(values);
-    clear();
+    // clear();
+    result();
 
-  } else if (values.length >= 1) {
+  } else if (values.length >0) {
     operation = this.value;
     values.push(calculator.left.value);
-    clear();
     console.log(values);
-    switch (operation) {
+    var calculation = operationArray[0];
+    switch (calculation) {
       case "+":
         var sum = (parseInt(values[0]) + parseInt(values[1]));
         values[0] = sum;
         values.pop ();
         console.log(values);
-        clear ();
+        // clear ();
         result ();
         break;
       case "-":
@@ -110,7 +104,7 @@ function handleOperator() {
         values[0] = diff;
         values.pop ();
         console.log(values);
-        clear ();
+        // clear ();
         result ();
         break;
       case "*":
@@ -118,7 +112,7 @@ function handleOperator() {
         values[0] = mult;
         values.pop ();
         console.log(values);
-        clear ();
+        // clear ();
         result ();
         break;
       case "/":
@@ -126,9 +120,17 @@ function handleOperator() {
         values[0] = divide;
         values.pop ();
         console.log(values);
-        clear ();
+        // clear ();
         result ();
         break;
+      // case "=":
+      //   var divide = (parseInt(values[0]) / parseInt(values[1]));
+      //   values[0] = divide;
+      //   values.pop ();
+      //   console.log(values);
+      //   // clear ();
+      //   result ();
+      //   break;
     }
   }
   };

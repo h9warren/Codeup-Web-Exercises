@@ -83,7 +83,8 @@ main {
   border-radius: 8px;
   border-style: index;
   border-width: 3px;
-  background: linear-gradient(to right, #12140f 0%, #282922 10%, #424339 60%,#5c5d4f 92%, #1b1d17 100%);
+  background: -webkit-radial-gradient(90% 2%,rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 12%),
+	linear-gradient(to right, #12140f 0%, #282922 10%, #424339 60%,#5c5d4f 92%, #1b1d17 100%);
 
 }
 .button {
@@ -115,7 +116,8 @@ main {
   border-radius: 8px;
   border-style: index;
   border-width: 3px;
-  background: linear-gradient(to right, #4a4a4a 0%, #898a7d 10%, #b1b3a3 60%,#bcbdae 92%, #a5aa9c 100%);
+  background: -webkit-radial-gradient(90% 2%,rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 12%),
+	linear-gradient(to right, #4a4a4a 0%, #898a7d 10%, #b1b3a3 60%,#bcbdae 92%, #a5aa9c 100%);
 
 }
 .operator {
@@ -148,7 +150,8 @@ main {
   border-radius: 8px;
   border-style: index;
   border-width: 3px;
-  background: linear-gradient(to right, #7c4206 0%, #a05305 10%, #ad5a0f 60%,#d26c12 92%, #da852d 100%);
+  background: -webkit-radial-gradient(90% 2%,rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 12%),
+	linear-gradient(to right, #7c4206 0%, #a05305 10%, #ad5a0f 60%,#d26c12 92%, #da852d 100%);
 
 }
 .cButton {
