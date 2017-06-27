@@ -53,115 +53,28 @@
         "content": "<h2>Toby's Public House</h2><h4>Notable:</h4><p>House-Made Pappardelle</p><h4>Also check out:</h4><p>Cannelli, Caper, Lemon & Anchovy Crostini</p><br><em>Carroll Gardens</em>"
         },
     ]
+
     restaurants.forEach(function(restaurants){
       var marker = new google.maps.Marker ({
         position: restaurants.position,
         label: restaurants.name,
         map: map
       })
+      var infowindow = new google.maps.InfoWindow({
+        content: restaurants.content
+      })
       google.maps.event.addListener(marker,'click', toggleBounce)
       function toggleBounce() {
         if (marker.getAnimation() !== null) {
           marker.setAnimation(null);
+          infowindow.open(map,marker);
         } else {
           marker.setAnimation(google.maps.Animation.BOUNCE);
       }
     }
     });
-
-
-
-
-    // marker.addListener('click', function() {
-    //   infowindow.open(map, marker);
-    // });
-
-    // var infowindow = new google.maps.InfoWindow({
-    //       content:
-    //       "<h2>Toby's Public House</h2><h4>Notable:</h4><p>Black Truffle Mushroom Ravioli</p><h4>Also check out:</h4><p>Bam's Jerky</p><br><em>Sunset Park</em>"
-    //     });
-  //   function setMarkersInfo(map, restaurants) {
-  //     for (var i = 0; i < restaurants.length; i++) {
-  //         var restaurant = restaurants[i];
-  //
-  //         var marker = new google.maps.Marker({
-  //           position: restaurant.position,
-  //           map: map,
-  //           label: restaurant.name,
-  //           animation: google.maps.Animation.DROP,
-  //         });
-  //         console.log(restaurant);
-          // google.maps.event.addListener(marker,'click', toggleBounce(marker, i))
-          // function toggleBounce() {
-          //   if (marker.getAnimation() !== null) {
-          //     marker.setAnimation(null);
-          //   } else {
-          //     marker.setAnimation(google.maps.Animation.BOUNCE);
-          // //   }
-          // }
-  //     }
-  //   }
-  // };
-
-    // function setMarkersInfo(map, restaurants, toggleBounce) {
-    //   for (var i = 0; i < restaurants.length; i++) {
-    //       var restaurant = restaurants[i];
-    //
-    //       var marker[i] = new google.maps.Marker({
-    //         position: restaurant.position,
-    //         map: map,
-    //         label: restaurant.name,
-    //         animation: google.maps.Animation.DROP,
-    //       });
-    //       // console.log(restaurant);
-
-
-
-
-      // setMarkersInfo(map, restaurants);
-    // var tobys = {lat: 40.660224,lng: -73.991316 };
-    //
-    // var marker = new google.maps.Marker({
-    //   position: tobys,
-    //   map: map,
-    //   animation: google.maps.Animation.DROP,
-    // });
-      //
-      // marker.addListener('click', toggleBounce)
-      // function toggleBounce() {
-      //   if (marker.getAnimation() !== null) {
-      //     marker.setAnimation(null);
-      //   } else {
-      //     marker.setAnimation(google.maps.Animation.BOUNCE);
-      //   }
-      // };
-
-
-
-      // var address = "686 6th Ave, Brooklyn, NY 11215";
-      //
-      // var geocoder = new google.maps.Geocoder();
-      //
-      // geocoder.geocode({"address": address }, function(results, status){
-      //
-      //   if (status == google.maps.GeocoderStatus.OK) {
-      //     map.setCenter(results[0].geometry.location);
-      //     var infowindow = new google.maps.InfoWindow({
-      //       content:
-      //       "<h2>Toby's Public House</h2><h4>Notable:</h4><p>Black Truffle Mushroom Ravioli</p><h4>Also check out:</h4><p>Bam's Jerky</p><br><em>Sunset Park</em>"
-      //     });
-      //     marker.addListener('click', function() {
-      //       infowindow.open(map, marker);
-      //     });
-      //   } else {
-      //     alert("Geocoding was not successful–STATUS: " + status);
-      //   }
-      // });
-
-
-
-    // }());
-
+    var m = "true";
+    var array = ['John', 'Paul', 'George', 'Ringo', 'Santana'];
     </script>
 
   </body>

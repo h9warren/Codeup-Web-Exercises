@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function isNegative(number){
+      console.log(number);
+      if (number < 0){
+        console.log('negative!');
+      } else {
+        console.log('positive!');
+      }
+    };
+    function average(array){
+      var array;
+      var total = 0;
+      for (var i = 0; i < array.length; i++) {
+        total += parseInt(array[i]);
+      }
+      var averageNum = (total / (array.length-1));
+      console.log(averageNum);
+    };
+
+
+    function countOdds(array){
+      var array;
+      var oddArray = [];
+      for (var i = 0; i < array.length; i++){
+        if (array[i] % 2 != 0){
+          console.log('odds');
+          oddArray.push(array[i]);
+        }
+      }
+      console.log(oddArray);
+    };
+
+    function convertNameToObject(name){
+      name.split(" ");
+      var a = firstName;
+      var b = lastName;
+      var fullName = [
+        {"a":"b"}
+      ]
+      return fullName;
+    };
+
+
+
+
+  </script>
+
+</body>
+</html>
