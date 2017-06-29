@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Konami Code</title>
+    <style type="text/css">
+      h1 {
+        color:red;
+        margin: 100px auto;
+        text-align: center;
+      }
+      h2 {
+        color:red;
+        margin: 100px auto;
+        text-align: center;
+        top: 300px;
+
+      }
+      #logo{
+        margin: 100px auto;
+        background-image: url("img/konami-logo.png");
+        width: 502px;
+        height: 144px;
+        z-index: 2;
+        opacity: 0;
+      }
+      /*body {
+        background-image: url("img/konami-logo.png");
+      }*/
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Konami Code</h1>
+    <div id="logo"></div>
+    <!-- <img src="img/konami-logo.png" alt="konami logo"> -->
+    <h2 id="mode"></h2>
+    <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    var keys = [];
+    var kill = new Audio(src="/sounds/Contra_SFX_16.wav");
+      $(document).keyup(function(event){
+        var key = event.keyCode;
+        keys.push(key);
+        console.log(keys);
+        arrayLength();
+        setTimeout(function(){
+          keys = [];
+        }, 4000);
+      });
+    function arrayLength(){
+      if (konamiCode.length === keys.length) {
+        matchCode();
+        // console.log('konamiCode length == keys length');
+      }
+    };
+    function konamiAction(){
+      $('h1').css('display','none');
+      $('body').css('background-color', 'black');
+      $('#logo').css('opacity','1');
+      $('h2').text('MODE');
+      var audio = new Audio(src="/sounds/Contra_SFX_26.wav");
+      audio.play();
+      setTimeout(function() {
+        location.reload();
+      }, 5000);
+    }
+    function konamiFail(){
+      $('h1').text('FAIL');
+      $('body').css('background-color', 'black');
+      setInterval(function(){
+        kill.play();
+      }, 0);
+      setTimeout(function() {
+        location.reload();
+      }, 3000);
+      }
+    function matchCode(){
+      var keyString = keys.join('');
+      var konamiString = konamiCode.join('');
+      if (keyString === konamiString){
+        konamiAction();
+      } else {
+        konamiFail();
+        keys = [];
+      }
+    };
+
+
+    </script>
+  </body>
+</html>
