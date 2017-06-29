@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+      .invisible {
+        display: none;
+        color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#"><p id="showHide">show/hide answers</p></a>
+    <dl id="parks">
+      <dt>How did Yellowstone get its name?</dt>
+      <dd>So basically they've been naming parks after Apple software for a while now. It started a few years ago. There was this yellow rock here, so they named it after that rock.
+      </dd>
+      <dt>Is Yellowstone the largest national park?</dt>
+      <dd>Dude, it's friggin huge. Like there were dinosaurs here at one point. And there's all these mountains. It's like, really really super big. For sure.
+      </dd>
+      <dt>Is Yellowstone the most visited national park?</dt>
+      <dd>Nah. Well, yeah it sort of is. IDK. Lotsa people, ya know?</dd>
+      <dt>What is the difference between a national park and a national forest?</dt>
+      <dd>Well, parks are in cities, and forests are usually outside of the cities. Pretty common practice actually. Also, forests have more trees and parks are more for family recreation so they have like barbecue pits and soccer fields and what not.
+      </dd>
+      <dt>How many rangers work in Yellowstone?</dt>
+      <dd>Dude, there are no Rangers. That's like a complete myth perpetrated by that stupid Chuck Norris show. There's no such thing as rangers, believe me.
+      </dd>
+      <dt>How do you become a park ranger?</dt>
+      <dd>Well first you have to do a seance. Then you have to pray really hard. Then you have to eat these magic beans. And only then should you actually make a ranger uniform. I just told you , there's no such thing as rangers.
+      </dd>
+      <dt>Can we swim in rivers and lakes?</dt>
+      <dd>Can you swim in rivers and lakes? I don't know. Can you? LOL. Sure I guess...if you wanna get wet. LOL. Idiot.
+      </dd>
+      <dt>What's the highest peak in the park?</dt>
+      <dd>Whichever one I happen to be on man...seriously!
+      </dd>
+      <dt>Why is Yellowstone called a biosphere reserve and a world heritage site?</dt>
+      <dd>Who calls it that? I've never heard anyone call it that. I've seen Biodome though, and that movie sucked.
+      </dd>
+      <dt>What is the continental divide?</dt>
+      <dd>I guess that refers to Trump vs. Hillary fans?</dd>
+      <dt>How did Mt. Washburn form?</dt>
+      <dd>Why do you have two arms? idk. Like, that's just how it is you know. It's always been there. I'm sure it took millions of years though. To form that mountain, or whatever.</dd>
+
+    </dl>
+    <script src="/js/jquery-3.2.1.js">
+
+    </script>
+    <script type="text/javascript">
+    "use strict";
+    $('dd').addClass('invisible');
+    $('#showHide').click(function(){
+      $('dd').toggleClass('invisible');
+
+      console.log('invisible');
+    });
+    $('dt').click(function(){
+      $(this).toggleClass('yellow');
+    });
+
+
+    </script>
+
+  </body>
+  </html>

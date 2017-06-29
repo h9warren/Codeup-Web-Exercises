@@ -8,6 +8,7 @@
     <section id="hello">
 
     <script type="text/javascript">
+    "use strict";
 
 // //makes an UL with LI's 1-5
 // function makeUL (){
@@ -32,15 +33,24 @@
 //   return listB;
 // }; document.getElementById('hello').appendChild(makeULB());
 
-var number = [1,2,3];
+var numbers = [1,2,3];
 function addOne(numberArray){
   var outputArray = [];
     for (var i = 0; i < numberArray.length; i++) {
       outputArray.push(numberArray[i] + 1);
-      console.log('hello');
     }
     return outputArray;
   };
+
+  console.log(addOne(numbers));
+
+// numberArray.forEach(function(element, index, array) {
+//
+//     outputArray.push(element + 1);
+//
+// });
+//
+//   return outputArray;
 
 
 
