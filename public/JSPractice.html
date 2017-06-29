@@ -10,29 +10,31 @@
     <script type="text/javascript">
     "use strict";
 
-// //makes an UL with LI's 1-5
-// function makeUL (){
-//   var list = document.createElement('ul');
-//   for(var i = 1; i <= 5; i++) {
-//     var item = document.createElement('li');
-//     item.appendChild(document.createTextNode([i]));
-//     list.appendChild(item);
-//   }
-//   return list;
-// }; document.getElementById('hello').appendChild(makeUL());
-//
-//
-// //makes an UL with LI's 10-20
-// function makeULB (){
-//   var listB = document.createElement('ul');
-//   for(var i = 10; i <= 20; i+=2) {
-//     var itemB = document.createElement('li');
-//     itemB.appendChild(document.createTextNode([i]));
-//     listB.appendChild(itemB);
-//   }
-//   return listB;
-// }; document.getElementById('hello').appendChild(makeULB());
+//makes an UL with LI's 1-5
+function makeUL (){
+  var list = document.createElement('ul');
+  for(var i = 1; i <= 5; i++) {
+    var item = document.createElement('li');
+    item.appendChild(document.createTextNode([i]));
+    list.appendChild(item);
+  }
+  return list;
+}; document.getElementById('hello').appendChild(makeUL());
 
+
+//makes an UL with LI's 10-20
+function makeULB (){
+  var listB = document.createElement('ul');
+  for(var i = 10; i <= 20; i+=2) {
+    var itemB = document.createElement('li');
+    itemB.appendChild(document.createTextNode([i]));
+    listB.appendChild(itemB);
+  }
+  return listB;
+}; document.getElementById('hello').appendChild(makeULB());
+
+
+//returns an array with numbers 1 higher than input array
 var numbers = [1,2,3];
 function addOne(numberArray){
   var outputArray = [];
@@ -41,16 +43,20 @@ function addOne(numberArray){
     }
     return outputArray;
   };
-
   console.log(addOne(numbers));
 
-// numberArray.forEach(function(element, index, array) {
-//
-//     outputArray.push(element + 1);
-//
-// });
-//
-//   return outputArray;
+
+//returns an array with numbers 1 higher than input array
+
+function forEachArray(numberArray){
+  var outputArray =[];
+numberArray.forEach(function(element, index, array) {
+  outputArray.push(element + 1);
+})
+  return outputArray;
+};
+console.log(forEachArray(numbers));
+
 
 
 

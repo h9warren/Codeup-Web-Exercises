@@ -43,17 +43,27 @@ function add(num1, num2) {
   var sum = parseInt(num1) + parseInt(num2);
   return sum;
 }
+function sub(num1, num2) {
+  var dif = parseInt(num1) - parseInt(num2);
+  return dif;
+}
 
 
 function calculate() {
   if (arrayOne.length == 1){
     calculator.left.value = arrayOne[0];
     enteringNum = [];
-  } else if (arrayTwo[0]=="+") {
-    var num1 = parseInt(arrayOne[0]);
-    var num2 = parseInt(arrayOne[1]);
-    add (num1, num2);
-    console.log("nothing's happening.");
+  } else if (arrayTwo[0]== "+" || arrayTwo[0]== "-") {
+    if (arrayTwo[0]== "+"){
+      console.log(add(arrayOne[0], arrayOne[1]));
+      arrayTwo.shift();
+      console.log(arrayTwo);
+      enteringNum = [];
+    } else {
+      console.log(sub(arrayOne[0], arrayOne[1]));
+      arrayTwo.shift();
+      console.log(arrayTwo);
+      enteringNum = [];
+    }
   }
-
 };
