@@ -40,30 +40,138 @@ clearKey.addEventListener('click', function(){
 });
 
 function add(num1, num2) {
-  var sum = parseInt(num1) + parseInt(num2);
+  var sum = parseFloat(num1) + parseFloat(num2);
   return sum;
 }
 function sub(num1, num2) {
-  var dif = parseInt(num1) - parseInt(num2);
+  var dif = parseFloat(num1) - parseFloat(num2);
   return dif;
+}
+function divide(num1, num2) {
+  var quotient = parseFloat(num1) / parseFloat(num2);
+  return quotient;
+}
+function mult(num1, num2) {
+  var product = parseFloat(num1) * parseFloat(num2);
+  return product;
 }
 
 
 function calculate() {
-  if (arrayOne.length == 1){
-    calculator.left.value = arrayOne[0];
-    enteringNum = [];
-  } else if (arrayTwo[0]== "+" || arrayTwo[0]== "-") {
-    if (arrayTwo[0]== "+"){
-      console.log(add(arrayOne[0], arrayOne[1]));
-      arrayTwo.shift();
-      console.log(arrayTwo);
-      enteringNum = [];
-    } else {
-      console.log(sub(arrayOne[0], arrayOne[1]));
-      arrayTwo.shift();
-      console.log(arrayTwo);
-      enteringNum = [];
-    }
+  if (arrayOne.length == 1) {
+        calculator.left.value = arrayOne[0];
+        enteringNum = [];
   }
-};
+  else if (arrayTwo.length == 2) {
+          if ((arrayTwo[0]== "+") && (arrayTwo[1] == '+' || arrayTwo[1] == "-" )) {
+          var result = add(arrayOne[0], arrayOne[1]);
+          arrayOne.push(result);
+          arrayOne.splice(0,2);
+          arrayTwo.shift();
+          calculator.left.value = arrayOne[0];
+          enteringNum = [];
+        } else if ((arrayTwo[0]== "-") && (arrayTwo[1] == '+' || arrayTwo[1] == "-")) {
+          var result = sub(arrayOne[0], arrayOne[1]);
+          arrayOne.push(result);
+          arrayOne.splice(0,2);
+          arrayTwo.shift();
+          calculator.left.value = arrayOne[0];
+          enteringNum = [];
+        } else if (arrayTwo[0]== "÷") {
+          var result = divide(arrayOne[0], arrayOne[1]);
+          arrayOne.push(result);
+          arrayOne.splice(0,2);
+          arrayTwo.shift();
+          calculator.left.value = arrayOne[0];
+          enteringNum = [];
+        } else if (arrayTwo[0]== "*") {
+          var result = mult(arrayOne[0], arrayOne[1]);
+          arrayOne.push(result);
+          arrayOne.splice(0,2);
+          arrayTwo.shift();
+          calculator.left.value = arrayOne[0];
+          enteringNum = [];
+        } else if ((arrayTwo[0]== "+") && (arrayTwo[1] == '÷' || arrayTwo[1] == "*")) {
+          enteringNum = [];
+          calculator.left.value = arrayOne[1];
+        } else if ((arrayTwo[0]== "-") && (arrayTwo[1] == '÷' || arrayTwo[1] == "*")) {
+          enteringNum = [];
+          calculator.left.value = arrayOne[1];
+        }
+      } else if (arrayTwo.length == 3) {
+        if ((arrayTwo[1] == "*") && (arrayTwo[2] == '÷' || arrayTwo[2] == "*")) {
+          var result = mult(arrayOne[1], arrayOne[2]);
+          arrayOne.push(result);
+          arrayOne.splice(1,2);
+          arrayTwo.splice(1,1);
+          calculator.left.value = arrayOne[1];
+          enteringNum = [];
+        } else if ((arrayTwo[1] == "÷") && (arrayTwo[2] == '÷' || arrayTwo[2] == "*")) {
+          var result = divide(arrayOne[1], arrayOne[2]);
+          arrayOne.push(result);
+          arrayOne.splice(1,2);
+          arrayTwo.splice(1,1);
+          calculator.left.value = arrayOne[1];
+          enteringNum = [];
+        } else if ((arrayTwo[1] == "*") && (arrayTwo[2] == '+' || arrayTwo[2] == "-")) {
+          var result = mult(arrayOne[1], arrayOne[2]);
+          arrayOne.push(result);
+          arrayOne.splice(1,2);
+          arrayTwo.splice(1,1);
+          calculator.left.value = arrayOne[1];
+          enteringNum = [];
+          var op = arrayOne[0];
+          console.log(arrayOne);
+          console.log(arrayTwo);
+          nextStep(op);
+        } else if ((arrayTwo[1] == "÷") && (arrayTwo[2] == '+' || arrayTwo[2] == "-")) {
+          var result = divide(arrayOne[1], arrayOne[2]);
+          arrayOne.push(result);
+          arrayOne.splice(1,2);
+          arrayTwo.splice(1,1);
+          calculator.left.value = arrayOne[1];
+          enteringNum = [];
+          var op = arrayOne[0];
+          console.log(arrayOne);
+          console.log(arrayTwo);
+          nextStep(op);
+      }
+    }
+    };
+
+    function nextStep(op) {
+      if (op = "+") {
+        var result = add(arrayOne[0], arrayOne[1]);
+        arrayOne.push(result);
+        arrayOne.splice(0,2);
+        arrayTwo.shift();
+        calculator.left.value = arrayOne[0];
+        console.log(arrayOne);
+        console.log(arrayTwo);
+        enteringNum = [];
+      } else if (op = "-") {
+        var result = sub(arrayOne[0], arrayOne[1]);
+        arrayOne.push(result);
+        arrayOne.splice(0,2);
+        arrayTwo.shift();
+        calculator.left.value = arrayOne[0];
+        console.log(arrayOne);
+        console.log(arrayTwo);
+        enteringNum = [];
+    }
+  };
+
+
+
+
+// else if (arrayTwo.length == 3) {
+//     if ((arrayTwo[1] == "*" || arrayTwo[1] == "÷") &&
+//       (arrayTwo[2] == "*" || arrayTwo[2] == "÷")) {
+//
+//   } else if ((arrayTwo[1] == "*" || arrayTwo[1] == "÷") &&
+//     (arrayTwo[2] == "+" || arrayTwo[2] == "-")) {
+//
+//   } else if ((arrayTwo[1] == "+" || arrayTwo[1] == "-")) {
+//
+//   }
+// }
