@@ -3,165 +3,341 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-<style type="text/css">
-body {
-  background-color: #EEE;
-}
-div {
-  margin: 0px;
-  padding: 0px;
-}
-.container {
-  width: 90vw;
-  margin: 0 auto;
-  height: 90vh;
+      <style type="text/css">
+      body {
+        background-color: #EEE;
+      }
+      div {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        width: 90vw;
+        margin: 0 auto;
+        height: 90vh;
+      }
+      .UI {
+        width: 40%;
+        height: 100%;
+      }
+      .display {
+        display:inline;
+        width: 60%;
+        height: 100%;
+        background-color: #eee;
+      }
+      #leftSide, #rightSide {
+        display:inline;
+      }
+      #playerOne {
+        float:left;
 
-}
-.UI {
-  width: 40%;
-  height: 100%;
-
-
-
-}
-.display {
-  display:inline;
-  width: 60%;
-  height: 100%;
-  background-color: #eee;
-}
-#leftSide, #rightSide {
-  display:inline;
-
-}
-#playerOne {
-  float:left;
-  background-color: pink;
-}
-#leftSide{
-  float:left;
-
-}
-#leftUI{
-  float:right;
-}
-#rightUI{
-  float:left;
-}
-#playerTwo{
-
-  display:inline;
-  float:right;
-  background-color: pink;
-}
-.game {
-  width: 100%;
-  height: 85%;
-  background-color: white;
-}
-.player {
-  width: 50%;
-  height: 15%;
-}
-.player, .game {
+      }
+      #leftSide{
+        float:left;
+      }
+      #leftUI{
+        float:right;
+      }
+      #rightUI{
+        float:left;
+      }
+      #playerTwo{
+        display:inline;
+        float:right;
+        background-color: $EEE;
+      }
+      .game {
+        width: 100%;
+        height: 85%;
+        background-color: white;
+        opacity: .08;
+      }
+      .player {
+        width: 50vw;
+        height: 5vh;
+      }
+      .player, .game {
+        float: left;
+      }
+      .column {
+        float: left;
+        width: 32.6%;
+        height: 100%;
+        background-color: #eee;
+      }
+      #two, #four, #six, #eight {
+      }
+      #three, #six, #nine{
+        /*border-right: none;*/
+      }
+      .divider {
+          background-color: #555;
+      }
+      #leftDivider{
+        float: left;
+        width: 1.1%;
+        height: 100%;
+        border-radius: 20px;
+      }
+      #rightDivider{
+        float: left;
+        width: 1.1%;
+        height: 100%;
+        border-radius: 20px;
+      }
+      #vert1, #vert2, #vert3,
+      #vert4, #vert5, #vert6 {
+        position: relative;
+        float: left;
+        height: 1.6%;
+        width: 100%;
+      }
+      #vert1, #vert2 {
+        border-radius: 10px 0 0 10px;
+      }
+      #vert5, #vert6 {
+        border-radius: 0 10px 10px 0;
+      }
+      .box {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        float: left;
+        width: 85%;
+        height: 24.6%;
+        border-radius: 60px;
+        border: 10px solid #DDD;
+        background-color: none;
+        margin: 8%;
+      }
+      .boxCircle {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        float: left;
+        width: 85%;
+        height: 24.6%;
+        border-radius: 8px;
+        border: none;
+        background-color: #69d269;
+        margin: 8%;
+        color: white;
+        font-family: "Helvetica";
+        font-weight: bold;
+        font-size: 8em;
+        line-height: 142.6%;
+        text-align: center;
+      }
+      .boxX {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        float: left;
+        width: 85%;
+        height: 24.6%;
+        border-radius: 8px;
+        border: none;
+        background-color: #d26969;
+        margin: 8%;
+        color: white;
+        font-family: "Helvetica";
+        font-weight: bold;
+        font-size: 8em;
+        line-height: 142.6%;
+        text-align: center;
+      }
+      .hello{
+  position: absolute;
   float: left;
+  top: 32%;
+  left: 15%;
+  background-color: black;
+  width: 70%;
+  height: 40%;
 }
-.column {
-  float: left;
-  width: 32.6%;
-  height: 100%;
-  background-color: #eee;
+#top-line{
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 17px;
+  text-align: center;
+  margin: 8vh 0;
 }
-#two, #four, #six, #eight {
-
+#middle-line{
+  color: #ff3558;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 50px;
+  text-align: center;
+  margin: 8vh 0;
 }
-#three, #six, #nine{
-  /*border-right: none;*/
+#bottom-line{
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 17px;
+  text-align: center;
+  margin: 8vh 0;
 }
-.divider {
-    background-color: #555;
-}
-#leftDivider{
-  float: left;
-  width: 1.1%;
-  height: 100%;
-  border-radius: 20px;
-}
-#rightDivider{
-  float: left;
-  width: 1.1%;
-  height: 100%;
-  border-radius: 20px;
-}
-#vert1, #vert2, #vert3,
-#vert4, #vert5, #vert6 {
-  position: relative;
-  float: left;
-  height: 1.6%;
-  width: 100%;
-}
-#vert1, #vert2 {
-  border-radius: 10px 0 0 10px;
-}
-#vert5, #vert6 {
-  border-radius: 0 10px 10px 0;
-}
-.box {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: relative;
-  float: left;
-  width: 85%;
-  height: 24.6%;
-  border-radius: 60px;
-  border: 10px dotted #DDD;
-  background-color: none;
-  margin: 8%;
-
-}
-
-
-
-
-
-</style>
+      </style>
+      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"
 
   </head>
   <body>
     <div class= "container">
     <div class="player" id="leftSide">
-      <div class="UI" id="playerOne">Player 1</div>
+      <div class="UI" id="playerOne"></div>
       <div class="display" id="leftUI"></div>
     </div>
     <div class="player" id="rightSide">
       <div class="display" id="rightUI"></div>
-      <div class="UI" id="playerTwo">Player 2</div>
+      <div class="UI" id="playerTwo"></div>
     </div>
     <div class="game">
       <div class="column" id="leftColumn">
-        <div class="box" id="one" value="1"></div>
+        <div class="box" id="one" data-value="1"></div>
         <div class="divider" id="vert1"></div>
-        <div class="box" id="four" value="4"></div>
+        <div class="box" id="four" data-value="4"></div>
         <div class="divider" id="vert2"></div>
-        <div class="box" id="seven" value="7"></div>
+        <div class="box" id="seven" data-value="7"></div>
       </div>
       <div class="divider" id="leftDivider"></div>
       <div class="column" id="centerColumn">
-        <div class="box" id="two" value="2"></div>
+        <div class="box" id="two" data-value="2"></div>
         <div class="divider" id="vert3"></div>
-        <div class="box" id="five" value="5"></div>
+        <div class="box" id="five" data-value="5"></div>
         <div class="divider" id="vert4"></div>
-        <div class="box" id="eight" value="8"></div>
+        <div class="box" id="eight" data-value="8"></div>
       </div>
       <div class="divider" id="rightDivider"></div>
       <div class="column" id="rightColumn">
-        <div class="box" id="three" value="3"></div>
+        <div class="box" id="three" data-value="3"></div>
         <div class="divider" id="vert5"></div>
-        <div class="box" id="six" value="6"></div>
+        <div class="box" id="six" data-value="6"></div>
         <div class="divider" id="vert6"></div>
-        <div class="box" id="nine" value="9"></div>
+        <div class="box" id="nine" data-value="9"></div>
       </div>
       </div>
+      <div class="hello">
+        <p id="top-line">
+          X O X O X O X O X O X O X O X O X</p>
+          <p id="middle-line">TIC TAC TOE</p>
+          <p id="bottom-line">
+            X O X O X O X O X O X O X O X O X</p>
+          </div>
     </container>
-  </body>
-  </html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    var random = Math.floor((Math.random() * 2) + 0);
+    console.log(random);
+    var turnCount = random;
+    var circleCount = [];
+    var squareCount = [];
+
+    function load() {
+      $(".box").removeClass('boxCircle')
+      $(".box").removeClass('boxX')
+      $(".box").text("");
+      circleCount = [];
+      squareCount = []
+      setTimeout(function(){
+        $("#middle-line").fadeOut(500)
+        $("#top-line").fadeOut(500)
+        $("#bottom-line").fadeOut(500, goFirst)
+      }, 1000)
+
+      function goFirst() {
+        if (turnCount%2==0) {
+          $("#middle-line").text("O");
+          $("#middle-line").css("font-size", "100px");
+          $("#bottom-line").text("GOES FIRST!!");
+          $("#bottom-line").show()
+          $("#bottom-line").css('font-size','24px');
+          $("#middle-line").show();
+          console.log("Circle it's your turn!");
+        } else {
+          $("#middle-line").text("X");
+          $("#middle-line").css("font-size", "100px");
+          $("#bottom-line").text("GOES FIRST!!");
+          $("#bottom-line").show()
+          $("#bottom-line").css('font-size','24px');
+          $("#middle-line").show();
+          console.log("Square it's your turn!");
+        }
+      } setTimeout(function(){
+        $(".hello").fadeOut(500)
+        $(".game").fadeIn(500)
+        game ()
+      }, 3000)
+    };
+    load();
+
+  function game () {
+    function whosTurn() {
+      if (turnCount%2==0) {
+        console.log("Circle it's your turn!");
+      } else {
+        console.log("Square it's your turn!");
+      }
+    }
+  $(".game").animate({'opacity': '1'}, 500)
+  $(".box").on('click', function(){
+    if (turnCount%2==0) {
+      $(this).addClass('boxCircle');
+      $(this).text("O");
+      var data = $(this).data("value")
+      circleCount.push(data);
+      circleCount.sort(function(a, b){return a-b});
+      turnCount++;
+      whosTurn();
+      checkwinner(circleCount, "O");
+    } else {
+      $(this).addClass('boxX');
+      $(this).text("X");
+      var data = $(this).data("value")
+      squareCount.push(data);
+      squareCount.sort(function(a, b){return a-b});
+      turnCount++;
+      whosTurn();
+      checkwinner(squareCount, "X");
+    }
+  })
+  function checkwinner(array, player) {
+    if (array.includes(1) && array.includes(2) && array.includes(3)) {
+      winner(player);
+    } else if (array.includes(4) && array.includes(5) && array.includes(6)){
+      winner(player);
+    } else if (array.includes(7) && array.includes(8) && array.includes(9)){
+      winner(player);
+    } else if (array.includes(1) && array.includes(4) && array.includes(7)){
+      winner(player);
+    } else if (array.includes(2) && array.includes(5) && array.includes(8)){
+      winner(player);
+    } else if (array.includes(3) && array.includes(6) && array.includes(9)){
+      winner(player);
+    } else if (array.includes(1) && array.includes(5) && array.includes(9)){
+      winner(player);
+    } else if (array.includes(7) && array.includes(5) && array.includes(3)){
+      winner(player);
+    }
+  }
+  function winner(player){
+    console.log(player + " is the winner.");
+      $(".hello").show()
+      $(".box").off();
+      $("#middle-line").text(player);
+      $("#bottom-line").text("WINS!!");
+
+     setTimeout(function(){
+      random = Math.floor((Math.random() * 2) + 0);
+      load ()
+    }, 1000)
+  }
+  };
+
+  // for(var i = 0; i < winners.length; i++){
+  //   winner.push(string.indexOf(winners[i]));
+  //   console.log(winner);
+  //   youWin = $.inArray(0, winner)
+  //   console.log(youWin);
+</script>
+</body>
+</html>
