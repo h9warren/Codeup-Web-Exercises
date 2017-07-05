@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" src= "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-D9XILkoivXN+bcvB2kSOowkIvIcBbNdoDQvfBNsxYAIieZbx8/SI4NeUvrRGCpDi" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div id="posts"></div>
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+    ( function (){
+      var request = $.get("/data/blog.json");
+      request.done(function(data,status){
+        addPostsToPage(data);
+        console.log(data);
+      })
+      request.fail(function(jqXhr, status, error){
+        console.log(status);
+        console.log(error);
+      })
+      function addPostsToPage(data) {
+          var posts = data
+          console.log(posts);
+          for (var i = 0; i < posts.length; i++){
+          $("#posts").append(
+            "<section>" +
+            "<h2>" + posts[i].title + "</h2>" +
+            "<h4>" + posts[i].date + "</h4>" +
+            "<p>" + posts[i].content + "</p>" +
+            "<em>" + posts[i].categories.join(", ") + "</em>" +
+            "</section>"
+          )
+          $("section").addClass("well");
+        }
+      }
+    }());
+    </script>
+
+  </body>
+  </html>
