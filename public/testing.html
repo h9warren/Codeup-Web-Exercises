@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.css" />
+</head>
+<body>
+
+    <h1 style="font-family:monospace">JS Assesment</h1>
+
+    <!-- jasmine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/boot.js"></script>
+
+    <!-- tests -->
+    <script src="http://tools.codeup.com/javascript-assesment-tests.js"></script>
+
+    <!-- custom js -->
+    <script>
+    // ====================================================
+    // isNegative
+    // ====================================================
+
+        function isNegative(number) {
+          if (number < 0){
+            return true;
+          } else {
+            return false;
+          }
+        };
+
+    // ====================================================
+    // average
+    // ====================================================
+
+        function average(array){
+          var array;
+          var total = 0;
+          for (var i = 0; i < array.length; i++) {
+            total += parseInt(array[i]);
+          }
+          var averageNum = (total / (array.length));
+          return(averageNum);
+        };
+
+    // ====================================================
+    // countOdds
+    // ====================================================
+
+        function countOdds(array){
+          var array;
+          var oddArray = [];
+          for (var i = 0; i < array.length; i++){
+            if (array[i] % 2 != 0) {
+              oddArray.push(array[i]);
+            }
+          }
+          return(oddArray.length);
+        };
+
+    // ====================================================
+    // convertNameToObject
+    // ====================================================
+
+        function convertNameToObject(nameString) {
+          var nameArray = nameString.split(" ");
+          var nameObject = {
+            "firstName":nameArray[0],
+            "lastName":nameArray[1]
+          }
+          return nameObject;
+        };
+
+    // ====================================================
+    // fiveTo
+    // ====================================================
+
+        function fiveTo(number){
+          var max = number;
+          var newArray = [];
+          for (var i = 5; i < max; ++i) {
+            newArray.push(i);
+          }
+          return newArray;
+        }
+
+    // ====================================================
+    // upperCaseLastNames
+    // ====================================================
+
+      function upperCaseLastNames(names){
+        names.forEach(function(name){
+        var firstLetter = name.lastName[0].toUpperCase() + name.lastName.slice(1);
+        name.lastName = firstLetter;
+      }); return names;
+    };
+
+    </script>
+
+</body>
+</html>

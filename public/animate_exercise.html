@@ -40,29 +40,29 @@
         function moveIt(){
           $('#animate-box').animate ({
             left: "-=100px",
-          }, 1000);
+          }, 500);
         }
           $('#btn-move').click(moveIt);
 
         // TODO: "Scale It" should expand the box width by 50%
         function scaleIt(){
           $('#animate-box').animate ({
-            width: "+=50%"
-          }, 1000);
+            width : $('#animate-box').width()*(1.5) + "px"
+          }, 500);
         }
         $('#btn-scale').click(scaleIt);
         // TODO: "Hide It" should use opacity to make the box invisible
         $('#btn-hide').click(function(){
           $("#animate-box").animate({
               opacity: "0"
-          }, 2000)
+          }, 500)
         })
 
         // TODO: "Show It" should make the box appear
         $('#btn-show').click(function(){
           $("#animate-box").animate({
             opacity: "1"
-          }, 2000)
+          }, 500)
         })
 
         // TODO: "Animate All" should use an animation stack to:
@@ -73,13 +73,13 @@
           $('#animate-box').animate({
             left: "-=100px",
             width: "+=50%"
-          }, 1000).animate({
+          }, 500).animate({
             opacity: "0"
-          }, 1000).animate({
+          }, 500).animate({
             left: "0px",
             opacity: "100",
             width: "250px",
-          }, 1000)
+          }, 500)
         })
     });
     </script>

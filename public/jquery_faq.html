@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    </style>
     <style type="text/css">
       .invisible {
         display: none;
@@ -48,7 +51,7 @@
   <body>
     <div id="banner"><h2>Would you like to sign up for our newsletter?</h2><div id="close">X</div>
     </div>
-    <h2 id="register">Please register for an account, loser.</h2>
+    <h2 class = ".alert" id="register">Please register for an account, loser.</h2>
     <button id="showHide">Show / Hide answers</button>
     <dl id="parks">
       <dt>How did Yellowstone get its name?</dt>
@@ -139,8 +142,10 @@
     $('h3').click(function(){
       $(this).next().slideToggle(400);
     })
-    $('#register').css('display','none');
-    $('#register').fadeIn(1500);
+    // $('#register').hide().delay(8000).fadeIn(1500);
+    setTimeout(function(){
+      $('#register').fadeIn(2000);
+    }, 8000)
     </script>
   </body>
   </html>
