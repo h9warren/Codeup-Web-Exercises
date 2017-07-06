@@ -45,7 +45,8 @@
       #playerTwo{
         display:inline;
         float:right;
-        background-color: $EEE;
+        background-color: #EEE;
+
       }
       .game {
         width: 100%;
@@ -56,6 +57,7 @@
       .player {
         width: 50vw;
         height: 5vh;
+
       }
       .player, .game {
         float: left;
@@ -177,6 +179,7 @@
   text-align: center;
   margin: 8vh 0;
 }
+
       </style>
       <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"
 
@@ -226,6 +229,7 @@
     </container>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
+
     var random = Math.floor((Math.random() * 2) + 0);
     console.log(random);
     var turnCount = random;
@@ -271,6 +275,7 @@
     load();
 
   function game () {
+
     function whosTurn() {
       if (turnCount%2==0) {
         console.log("Circle it's your turn!");
@@ -333,11 +338,6 @@
   }
   };
 
-  // for(var i = 0; i < winners.length; i++){
-  //   winner.push(string.indexOf(winners[i]));
-  //   console.log(winner);
-  //   youWin = $.inArray(0, winner)
-  //   console.log(youWin);
 </script>
 </body>
 </html>
