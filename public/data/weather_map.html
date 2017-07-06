@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://codeup.dev/weather_map.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylsheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <script src="./weather_map_files/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script>
+    // key: 8b21151a7c136222f70cba36e55c6af9
+  (document).ready(function() {
+
+  function makeRequest () {
+    var request = $.get("api.openweathermap.org/data/2.5/forecast/daily"), {
+      APPID: "8b21151a7c136222f70cba36e55c6af9",
+      q: "San Antonio, TX"
+
+    };
+    request.done(function(data){
+      console.log(data);
+    })
+  } makeRequest();
+
+
+  });
+
+  </script>
+  
+
+</body></html>
