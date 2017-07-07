@@ -7,20 +7,22 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4MykfDptSwWPPeSBADg68S6bmkDuL3Dc"
   type="text/javascript"></script>
     <style media="screen">
+      body{
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+      }
       .day {
         text-align: center;
         position: relative;
         float: left;
-        width: 30vw;
+        width: 28vw;
         /*height: 40vh;*/
-        background-color: white;
-        border: 1px solid #EEE;
-        margin: .3vw;
+        background-color: rgba(0,0,0,.4);
+        border: 1px solid rgba(255,255,255,.3);
+        margin: .8vw;
         border-radius: 7px;
-      }
-      .forecast {
-        position: relative;
-        margin: 50px auto;
       }
       .day h5 {
         font-family: "Helvetica";
@@ -32,6 +34,7 @@
         -webkit-margin-after: .6em;
         -webkit-margin-start: 0px;
         -webkit-margin-end: 0px;
+        color: white;
       }
       .day img{
         position: relative;
@@ -41,34 +44,168 @@
         bottom: -1vh;
       }
       .day p {
+        -webkit-margin-before: .6em;
+        -webkit-margin-after: .6em;
         font-family: "Helvetica";
         font-size: 1.3em;
+        color: white;
       }
       #map-canvas {
-        height: 40vh;
-        width: 90vw;
+        position: absolute;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+      }
+      #top-bar {
+        position: absolute;
+        /*float: left;*/
+        background-color: #000;
+        opacity: .6;
+        width: 100%;
+        height: 430px;
+
+      }
+      #city {
+        position: absolute;
+        color: white;
+        font-family: "Helvetica";
+        font-weight: lighter;
+        margin-left: 5vw;
+        margin-top: 3vh;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: .3em;
+        text-align: center;
+      }
+      .forecast{
+        position: absolute;
+        margin: 80px 5vw 10vh 5vw;
+      }
+      .search{
+        float: right;
+        position: relative;
+        margin-right: 6vw;
+        top: 4vh;
+        height: 37px;
+        width: 221px;
+        background-color: rgba(0,0,0,1);
+        border: none;
+        border-radius: 3px;
+        color: #878787;
+        /* text-transform: uppercase; */
+        /* letter-spacing: .2em; */
+        padding: 10px;
+        font-size: 17px;
       }
     </style>
   </head>
   <body>
-    <h2 id="city"></h2>
+      <div id="map-canvas"></div>
+      <div id="top-bar"></div>
+      <div class="search">
+        <input id="searchCity" type="search" name="enterCity" placeholder="Enter a city">
+        <button id="searchNow">GO</button>
+      </div>
+      <h2 id="city"></h2>
       <section class="forecast">
         <div class="day" id="day1"></div>
         <div class="day" id="day2"></div>
         <div class="day" id="day3"></div>
-        <div id="map-canvas"></div>
       </section>
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.js"
       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
       crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/myStyles.js"></script>
   <script>
+  var myStyles = [
+              {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+              {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+              {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+              {
+                featureType: 'administrative.locality',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{color: '#263c3f'}]
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#6b9a76'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{color: '#38414e'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#212a37'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#9ca5b3'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [{color: '#746855'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#1f2835'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#f3d19c'}]
+              },
+              {
+                featureType: 'transit',
+                elementType: 'geometry',
+                stylers: [{color: '#2f3948'}]
+              },
+              {
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{color: '#17263c'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#515c6d'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.stroke',
+                stylers: [{color: '#17263c'}]
+              }
+            ]
+
     // key: 8b21151a7c136222f70cba36e55c6af9
     // temp: data.list[1].temp.day
   $(document).ready(function() {
 
   function makeRequest (lat, lon) {
+    console.log(lat, lon);
     var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily",
     {
       APPID: "8b21151a7c136222f70cba36e55c6af9",
@@ -135,8 +272,10 @@
       }
     }
     function createMap() {
+
       var mapOptions = {
-        zoom: 20,
+        zoom: 16,
+        styles: myStyles,
         center: {
           lat: 29.426791,
           lng: -98.489602
@@ -150,11 +289,19 @@
         placeMarker(event.latLng);
       });
 
+      var marker;
       function placeMarker(location) {
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
+        if (marker == null) {
+            marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            animation: google.maps.Animation.DROP
+          });
+        } else {
+          marker.setPosition(location);
+
+        }
+
         var lat = (location.lat());
         var lon = (location.lng());
         makeRequest(lat, lon);
@@ -164,17 +311,36 @@
     }
 
     createMap();
-    // data.city.coord.lat;
-    // data.city.coord.lon;
 
-    //on click add marker
-    //get the lat and lon from that marker
+    //create a search box
 
-    //pass that to makeRequest function
+    //take the value of the search box
 
-    //run makeRequest
+    //send to request function
+    $("#searchNow").click(function() {
+      var searchLoc = $("#searchCity").val();
+      console.log(searchLoc);
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({
+        address: searchLoc
+      }, function(results, status) {
+        console.log(results);
+        if (status == google.maps.GeocoderStatus.OK) {
+          var Lat = results[0].geometry.location.lat();
+          var Lng = results[0].geometry.location.lng();
+          // map.setCenter({lat: Lat, lng: Lng});
+          makeRequest(Lat, Lng);
+          var myOptions = {
+            zoom: 11,
+            center: new google.maps.LatLng(Lat, Lng)
+          };
+        }
+      });
 
-    //animate the marker
+    })
+    //update map
+
+
 
 
 
