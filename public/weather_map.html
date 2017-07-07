@@ -68,11 +68,12 @@
     // temp: data.list[1].temp.day
   $(document).ready(function() {
 
-  function makeRequest () {
+  function makeRequest (lat, lon) {
     var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily",
     {
       APPID: "8b21151a7c136222f70cba36e55c6af9",
-      id: "4726206",
+      lat: lat,
+      lon: lon,
       units: "imperial"
     });
     request.done(function(data){
@@ -135,7 +136,7 @@
     }
     function createMap() {
       var mapOptions = {
-        zoom: 05,
+        zoom: 20,
         center: {
           lat: 29.426791,
           lng: -98.489602
@@ -144,9 +145,36 @@
       };
       var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
       var address = "300 Alamo Plaza, San Antonio, TX, 78205";
+      makeRequest("29.4241", "-98.4937");
+      google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+      });
+
+      function placeMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        var lat = (location.lat());
+        var lon = (location.lng());
+        makeRequest(lat, lon);
+
+
+      };
     }
-    makeRequest();
+
     createMap();
+    // data.city.coord.lat;
+    // data.city.coord.lon;
+
+    //on click add marker
+    //get the lat and lon from that marker
+
+    //pass that to makeRequest function
+
+    //run makeRequest
+
+    //animate the marker
 
 
 
