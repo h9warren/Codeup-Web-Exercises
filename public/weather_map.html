@@ -98,6 +98,25 @@
         padding: 10px;
         font-size: 17px;
       }
+
+      #forecastType {
+        color: white;
+        padding: 0;
+        font-family: "Helvetica";
+
+      }
+      #forecastType li {
+        list-style-type: none;
+        display: inline;
+        color: white;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      #forecastType li:hover {
+          cursor: pointer;
+          color: #AAA;
+      }
     </style>
   </head>
   <body>
@@ -109,8 +128,11 @@
           <button id="searchNow">GO</button>
         </div>
         <h2 id="city"></h2>
-        <div>Forecast: <a id="1Day">2 Day</a>
-          <a id="3Day">3 Day</a><a id="5Day">5 Day</a></div>
+        <ul id="forecastType">Forecast:
+          <li id="oneDay">1 Day</li>
+          <li id="threeDay">3 Day</li>
+          <li id="fiveDay">5 Day</li>
+         </ul>
           <div class="day" id="day1"></div>
           <div class="day" id="day2"></div>
           <div class="day" id="day3"></div>
@@ -123,7 +145,7 @@
       src="https://code.jquery.com/jquery-3.2.1.js"
       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
       crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/myStyles.js"></script>
+      <script type="text/javascript" src="/js/myStyles.js"></script>
 
 
   </body>

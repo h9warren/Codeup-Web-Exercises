@@ -101,7 +101,7 @@ function makeRequest (lat, lon, cnt) {
     humidity(data);
     wind(data);
     pressure(data);
-    forecastType(data);
+    // forecastType(data);
   })
   .fail(function(jqHxr, status, error){
     console.log(status);
@@ -209,7 +209,14 @@ function makeRequest (lat, lon, cnt) {
       }
     });
   })
-    $("#1Day").click(function(){
+    $("#oneDay").click(function(){
       console.log("one");
     })
+    $("#threeDay").click(function(){
+      console.log("three");
+    })
+    $("#fiveDay").click(function(){
+      console.log("five");
+    })
+
 });
