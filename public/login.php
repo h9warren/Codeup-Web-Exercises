@@ -1,19 +1,25 @@
 <?php
 
+session_start();
 $userName = isset($_POST['un']) ? $_POST['un'] : "";
 $passWord = isset($_POST['pw']) ? $_POST['pw'] : "";
+$sessionId = session_id();
+if (isset($_SESSION['logged_in_user'])) {
+  header('Location: authorized.php');
+  die();
+}
 
 function checkID($userName, $passWord) {
   $message = [];
   if (!empty($_POST))
   {
-    if (($userName === 'Pizza') && ($passWord === 'Party'))
+    if (($userName === 'Hunter') && ($passWord === 'Warren'))
     {
-      // $message['status'] = "valid";
+      $_SESSION['logged_in_user'] = $userName;
       header('Location: authorized.php');
       die();
     } else {
-      //if invalid, print message
+      // $_SESSION['logged_in_user'] = false;
       $message['status'] = "invalid username or password";
     }
     return $message;
@@ -37,7 +43,7 @@ extract(checkID($userName, $passWord));
     <label>Username</label>
     <input type="text" name="un" value="">
     <label>Password</label>
-    <input type="text" name="pw" value="">
+    <input type="password" name="pw" value="">
     <button type="submit">Submit</button>
   </form>
   <p><?php echo $status ?></p>
