@@ -73,50 +73,51 @@ function pageController($allMovies)
     // If the $_GET request is empty, show every movie
     if (empty($_GET) == true) {
       $data['movies'] = $allMovies;
-      // return $data;
+      return $data;
     }
     if(isset($_GET['title'])) {
-      $title = (strtolower($_GET['title']));
+      $title = ucwords((strtolower($_GET['title'])));
       $movies = [];
       foreach($allMovies as $movie) {
-        $movie['title'] = strtolower($movie['title']);
-        if (in_array("the", $movie)) {
+        $movie['title'] = ucwords(strtolower($movie['title']));
+        if (in_array($title, $movie)) {
           $movies[] = $movie;
         }
+        $movie['title'] = strtoupper($movie['title']);
         $data['movies'] = $movies;
       }
       return $data;
     }
 
 
-    // creates an array of movies release after 2000
-    // if $_GET['release'] holds 'recent', make $movies hold movies with release dates >= 2000.
-    if(isset($_GET['release'])) {
-      $movies = [];
-      foreach($allMovies as $movie) {
-        if ($movie['release'] >= 2000) {
-          $movies[] = $movie;
-        }
+  // creates an array of movies release after 2000
+  // if $_GET['release'] holds 'recent', make $movies hold movies with release dates >= 2000.
+  if(isset($_GET['release'])) {
+    $movies = [];
+    foreach($allMovies as $movie) {
+      if ($movie['release'] >= 2000) {
+        $movies[] = $movie;
       }
-      $data['movies'] = $movies;
-      // return $data;
     }
+    $data['movies'] = $movies;
+    return $data;
+  }
 
 
-    // returns an array of movies with genres that match the value supplied by the $_GET request.
-    if(isset($_GET['genre'])) {
-        $genre = $_GET['genre'];
-        $movies = [];
+  // returns an array of movies with genres that match the value supplied by the $_GET request.
+  if(isset($_GET['genre'])) {
+      $genre = $_GET['genre'];
+      $movies = [];
 
-        foreach($allMovies as $movie) {
-            if(in_array($genre, $movie['genre'])) {
-              $movies[] = $movie;
-            }
+      foreach($allMovies as $movie) {
+          if(in_array($genre, $movie['genre'])) {
+            $movies[] = $movie;
           }
-          $data['movies'] = $movies;
         }
-        // return $data;
+        $data['movies'] = $movies;
       }
+      return $data;
+    }
       extract(pageController($allMovies));
       ?>
 
@@ -133,7 +134,7 @@ function pageController($allMovies)
 </head>
 <body>
     <main class="container">
-      <?php var_dump(pageController($allMovies)); ?>
+      <?php //var_dump(pageController($allMovies)); ?>
 
         <h1>Welcome to MovieLister!</h1>
 
