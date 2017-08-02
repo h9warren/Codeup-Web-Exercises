@@ -68,40 +68,49 @@ $allMovies = [
 function pageController($allMovies)
 {
     $data = [];
-    var_dump($_GET);
+    // var_dump($_GET);
 
     // If the $_GET request is empty, show every movie
+    if (empty($_GET) == true) {
+      $data['movies'] = $allMovies;
+    }
 
-    // If $_GET['genre'] holds 'adventure', make $movies hold movies with 'adventure' as a genre.
 
+    // creates an array of movies release after 2000
+    // if $_GET['release'] holds 'recent', make $movies hold movies with release dates >= 2000.
+    if(isset($_GET['release'])) {
+      $movies = [];
+      foreach($allMovies as $movie) {
+        if ($movie['release'] >= 2000) {
+          $movies[] = $movie;
+        }
+      }
+      $data['movies'] = $movies;
+    }
+
+
+    // returns an array of movies with genres that match the value supplied by the $_GET request.
     if(isset($_GET['genre'])) {
-        // make a new array called $movies
-        // iterate through the allMovies array
-        // if any movie has the genre of sci-fi, push that array onto $movies;
-
         $genre = $_GET['genre'];
         $movies = [];
 
         foreach($allMovies as $movie) {
             if(in_array($genre, $movie['genre'])) {
-
-                $movies[] = $movie;
+              $movies[] = $movie;
             }
+          }
+          $data['movies'] = $movies;
         }
+        return $data;
+      }
+      extract(pageController($allMovies));
+      ?>
 
-        $data['movies'] = $movies;
 
-    } else {
-        // set $data['movies'] to hold all movies (unless another request is made.)
-        $data['movies'] = $allMovies;
-    }
 
-    return $data;
-}
 
-extract(pageController($allMovies));
 
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,6 +119,7 @@ extract(pageController($allMovies));
 </head>
 <body>
     <main class="container">
+      <?php //var_dump(pageController($allMovies)); ?>
 
         <h1>Welcome to MovieLister!</h1>
 
@@ -123,16 +133,18 @@ extract(pageController($allMovies));
 
         <section class="links">
             <!-- Add a link that will show all movies  -->
-            <a href="">Show all movies</a>
+            <a href="movies.php">Show all movies</a>
 
             <!-- Add a link that will show only movies with a release date after 2000 -->
-            <a href="">All movies released after 2000</a>
+            <a href="?release=recent">All movies released after 2000</a>
 
             <!-- Add a link that shows all movies w/ the comedy genre -->
-            <a href="">Show only comedies</a>
+            <a href="?genre=comedy">Show only comedies</a>
 
             <!-- Add a link that shows all movies w/ the sci-fi genre -->
             <a href="movies.php?genre=sci-fi">Show all Sci-Fi movies</a>
+
+            <a href="movies.php?genre=adventure">Show all adventure movies</a>
 
         </section>
         <section class="movies">
