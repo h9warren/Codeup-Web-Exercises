@@ -73,6 +73,19 @@ function pageController($allMovies)
     // If the $_GET request is empty, show every movie
     if (empty($_GET) == true) {
       $data['movies'] = $allMovies;
+      // return $data;
+    }
+    if(isset($_GET['title'])) {
+      $title = (strtolower($_GET['title']));
+      $movies = [];
+      foreach($allMovies as $movie) {
+        $movie['title'] = strtolower($movie['title']);
+        if (in_array("the", $movie)) {
+          $movies[] = $movie;
+        }
+        $data['movies'] = $movies;
+      }
+      return $data;
     }
 
 
@@ -86,6 +99,7 @@ function pageController($allMovies)
         }
       }
       $data['movies'] = $movies;
+      // return $data;
     }
 
 
@@ -101,7 +115,7 @@ function pageController($allMovies)
           }
           $data['movies'] = $movies;
         }
-        return $data;
+        // return $data;
       }
       extract(pageController($allMovies));
       ?>
@@ -119,16 +133,19 @@ function pageController($allMovies)
 </head>
 <body>
     <main class="container">
-      <?php //var_dump(pageController($allMovies)); ?>
+      <?php var_dump(pageController($allMovies)); ?>
 
         <h1>Welcome to MovieLister!</h1>
 
         <section class="form">
-            <form>
-                <!-- Add an input to search by "title" -->
+            <form method="GET" action="movies.php">
+              <input type="text" name="title" value="" placeholder="Search movie titles">
+              <button type="submit">Search</button>
+
+
+            </form>
                 <!-- Add a form that has an input for "genre" -->
                 <!-- Add submit button -->
-            </form>
         </section>
 
         <section class="links">
