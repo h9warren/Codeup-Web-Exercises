@@ -18,13 +18,17 @@ extract(pageController());
   <style media="screen">
   .bigdiv {
     text-align:center;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     margin-left: auto;
   }
   h1 {
     color: black;
     font-size: 200px;
     font-family: "Helvetica";
+    margin: none;
+    padding: none;
+    -webkit-margin-after: 40px;
+    -webkit-margin-before: 40px;
   }
   a {
     color: blue;
@@ -47,6 +51,7 @@ extract(pageController());
     $count-=2;
     echo "?count=".$count;?>
     >DOWN</a>
+    
   </div>
 </body>
 </html>

@@ -2,8 +2,10 @@
 
 function pageController() {
   $count = (isset($_GET["count"])) ? $_GET["count"] : 0;
+  $shot = (isset($_GET["shot"])) ? $_GET["shot"] : "go";
   $dataArray = [
-    "count" => $count
+    "count" => $count,
+    "shot" => $shot
   ];
   return $dataArray;
 }
@@ -18,7 +20,7 @@ extract(pageController());
   <style media="screen">
   .bigdiv {
     text-align:center;
-    margin-top: 100px;
+    /*margin-top: 20px;*/
     margin-left: auto;
   }
   h1 {
@@ -32,6 +34,7 @@ extract(pageController());
     font-family: "Helvetica";
     padding: 20px;
   }
+
   </style>
 </head>
 <body>
@@ -40,12 +43,14 @@ extract(pageController());
     <a href=
     <?php
     $count++;
-    echo "ping.php?count=".$count;?>
+    $shot = "hit";
+    echo "ping.php?count=".$count."&shot=".$shot;?>
     >HIT</a>
     <a href=
     <?php
     $count=0;
-    echo "?count=".$count;?>
+    $shot = "miss";
+    echo "?count=".$count."&shot=".$shot;?>
     >MISS</a>
   </div>
 </body>
