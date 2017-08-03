@@ -1,8 +1,14 @@
 <?php
 
+require 'functions.php';
+
 function pageController() {
-  $count = (isset($_GET["count"])) ? $_GET["count"] : 0;
-  $shot = (isset($_GET["shot"])) ? $_GET["shot"] : "go";
+
+  $count = inputGet("count") ? inputGet(escape("count")) : 0 ;
+  $shot = inputGet("shot") ? inputGet(escape("shot")) : "go" ;
+
+  // $count = (isset($_GET["count"])) ? $_GET["count"] : 0;
+  // $shot = (isset($_GET["shot"])) ? $_GET["shot"] : "go";
   $dataArray = [
     "count" => $count,
     "shot" => $shot
