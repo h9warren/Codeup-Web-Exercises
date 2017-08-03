@@ -6,13 +6,13 @@ function inputHas($key)
 }
 function inputGet($key)
 {
-  $key = (inputHas($key)) ? $_REQUEST[$key] : null;
+  $input = (inputHas($key)) ? $_REQUEST[$key] : null;
 
-  return $key;
+  return $input;
 }
-function escape($key)
+function escape($input)
 {
-  $escapeString = htmlspecialchars(strip_tags($key));
+  $escapeString = htmlspecialchars(strip_tags($input));
   return $escapeString;
 }
 
