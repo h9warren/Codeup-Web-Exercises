@@ -1,8 +1,11 @@
 <?php
+
+session_start();
+
 require_once 'functions.php';
 
 function pageController() {
-    if (isUserAuthenticated()) {
+    if (!isUserAuthenticated()) {
         redirect("login.php");
     }
     return ['username' => user(), 'title' => 'Welcome!!'];
@@ -13,6 +16,7 @@ extract(pageController());
 <html>
     <?php include 'header.php' ?>
     <body>
+    <?php var_dump($_SESSION); ?>
         <div class="container">
             <h1>Welcome <?= $username ?>!</h1>
             <p>

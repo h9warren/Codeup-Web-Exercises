@@ -1,4 +1,6 @@
 <?php
+
+
 function redirect($location)
 {
     header("Location: $location");
@@ -18,7 +20,7 @@ function user()
 function authenticate($username, $password)
 {
     if ($username == 'guest' && $password == 'password') {
-        $_SESSION['logged_in_user '] = $username;
+        $_SESSION['logged_in_user'] = $username;
         return true;
     }
     return false;
@@ -31,7 +33,7 @@ function isPost()
 
 function input($key, $default = '')
 {
-    return isset($_GET[$key]) ? $_GET[$key] : $default;
+    return isset($_POST[$key]) ? $_POST[$key] : $default;
 }
 
 function clearSession()

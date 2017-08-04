@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 require_once 'functions.php';
 
 
@@ -25,7 +26,7 @@ extract(pageController());
 <html>
     <?php include 'header.php' ?>
     <body>
-      <?php var_dump($_REQUEST); ?>
+      <?php var_dump($message); ?>
         <div class="container">
             <h1>Login</h1>
             <h2><?= $message ?></h2>
