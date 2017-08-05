@@ -1,19 +1,15 @@
 <?php
 
 session_start();
-// var_dump($_SESSION);
-// session_destroy();
+require "../Auth.php";
 
 if (isset($_POST['logout'])) {
-  session_unset();
-  session_destroy();
-  session_regenerate_id(true);
-  header('Location: login.php');
+  auth::logout();
 }
-if (!isset($_SESSION['logged_in_user'])) {
+if(!auth::check()) {
   header('Location: login.php');
 } else {
-  $user = $_SESSION['logged_in_user'];
+  $user = auth::user();
 }
 
 ?>
@@ -32,3 +28,6 @@ if (!isset($_SESSION['logged_in_user'])) {
   </form>
 </body>
 </html>
+
+
+

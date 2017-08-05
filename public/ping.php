@@ -1,11 +1,15 @@
 <?php
 
+require_once "../Input.php";
 require 'functions.php';
 
 function pageController() {
 
-  $count = inputGet("count") ? inputGet(escape("count")) : 0 ;
-  $shot = inputGet("shot") ? inputGet(escape("shot")) : "go" ;
+  $count = Input::get("count", 0);
+  $shot = Input::get("shot", "go");
+
+  // $count = inputGet("count") ? inputGet(escape("count")) : 0 ;
+  // $shot = inputGet("shot") ? inputGet(escape("shot")) : "go" ;
 
   // $count = (isset($_GET["count"])) ? $_GET["count"] : 0;
   // $shot = (isset($_GET["shot"])) ? $_GET["shot"] : "go";
@@ -17,6 +21,7 @@ function pageController() {
 }
 
 extract(pageController());
+var_dump($_REQUEST);
 ?>
 <!DOCTYPE html>
 <html>

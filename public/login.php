@@ -1,60 +1,23 @@
 <?php
 session_start();
+
+require '../Auth.php';
 require 'functions.php';
-$sessionId = session_id();
-if (isset($_SESSION['logged_in_user'])) {
+require_once '../Input.php';
+
+// $sessionId = session_id();
+if(auth::check()) {
   header('Location: authorized.php');
   die();
 }
 
-$userName = inputGet('un') ? escape(inputGet('un')) : null;
-$passWord = inputGet('pw') ? escape(inputGet('pw')) : null;
-function checkID($userName, $passWord) {
-  $message = [];
-  if (($userName === 'Hunter') && ($passWord === 'Warren'))
-    {
-      $_SESSION['logged_in_user'] = $userName;
-      header('Location: authorized.php');
-      die();
-    } else if (($userName === null) && ($passWord === null)) {
-      $message['status'] = "";
-      return $message;
-    } else {
-      // $_SESSION['logged_in_user'] = false;
-      $message['status'] = "invalid username or password";
-    }
-    return $message;
-}
-extract(checkID($userName, $passWord));
-// session_start();
-// $userName = isset($_POST['un']) ? $_POST['un'] : "";
-// $passWord = isset($_POST['pw']) ? $_POST['pw'] : "";
-// $sessionId = session_id();
-// if (isset($_SESSION['logged_in_user'])) {
-//   header('Location: authorized.php');
-//   die();
-// }
-//
-// function checkID($userName, $passWord) {
-//   $message = [];
-//   if (!empty($_POST))
-//   {
-//     if (($userName === 'Hunter') && ($passWord === 'Warren'))
-//     {
-//       $_SESSION['logged_in_user'] = $userName;
-//       header('Location: authorized.php');
-//       die();
-//     } else {
-//       // $_SESSION['logged_in_user'] = false;
-//       $message['status'] = "invalid username or password";
-//     }
-//     return $message;
-//   } else {
-//     $message['status'] = "";
-//     return $message;
-//   }
-// }
-// extract(checkID($userName, $passWord));
+$username = escape(Input::get('un'));
+$password = Input::get('pw');     
+
+$status = auth::attempt($username,$password);
+
+
+
 
 ?>
 

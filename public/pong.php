@@ -1,11 +1,13 @@
 <?php
 
+require_once "../Input.php";
 require 'functions.php';
 
 function pageController() {
 
-  $count = inputGet("count") ? inputGet(escape("count")) : 0 ;
-  $shot = inputGet("shot") ? inputGet(escape("shot")) : "go" ;
+  $count = Input::get("count", 0);
+  $shot = Input::get("shot", "go");
+  
   $dataArray = [
     "count" => $count,
     "shot" => $shot
@@ -14,6 +16,8 @@ function pageController() {
 }
 
 extract(pageController());
+
+var_dump($_REQUEST);
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,16 +46,16 @@ extract(pageController());
 </head>
 <body>
   <div class="bigdiv">
-    <h1><?= $count ?></h1>
+    <h1><?= escape($count) ?></h1>
     <a href=
     <?php
-    $count++;
+    escape($count++);
     $shot = "hit";
     echo "ping.php?count=".$count."&shot=".$shot;?>
     >HIT</a>
     <a href=
     <?php
-    $count=0;
+    escape($count=0);
     $shot = "miss";
     echo "?count=".$count."&shot=".$shot;?>
     >MISS</a>
