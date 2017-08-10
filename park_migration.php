@@ -2,18 +2,20 @@
 
 require "dbconnect.php";
 
-use parks_db;
+$dbc->exec("DROP TABLE IF EXISTS national_parks");
 
-PDO::exec(DROP TABLE IF EXISTS national_parks);
+$dbc->exec("
 
-PDO::exec(CREATE TABLE IF NOT EXISTS national_parks (
+	CREATE TABLE IF NOT EXISTS national_parks (
  	id int(10) unsigned NOT NULL AUTO_INCREMENT,
   	name varchar(126),
   	location varchar(126),
-  	date_est YEAR(4),
+  	date_est varchar(12),
   	area DOUBLE(14,2),
   	PRIMARY KEY (ID)
   );
+
+	");
 
 
   ?>
