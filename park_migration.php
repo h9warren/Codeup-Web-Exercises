@@ -10,7 +10,7 @@ $dbc->exec("
  	id int(10) unsigned NOT NULL AUTO_INCREMENT,
   	name varchar(126),
   	location varchar(126),
-  	date_est varchar(12),
+  	date_est DATE NOT NULL,
   	area DOUBLE(14,2),
   	PRIMARY KEY (ID)
   );
