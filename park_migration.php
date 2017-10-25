@@ -12,6 +12,7 @@ $dbc->exec("
   	location varchar(126),
   	date_est DATE NOT NULL,
   	area DOUBLE(14,2),
+  	description text,
   	PRIMARY KEY (ID)
   );
 
