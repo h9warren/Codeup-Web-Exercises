@@ -41,3 +41,16 @@ const nameId = users.reduce( function(accumulator, cv) {
     accumulator[cv.id] = {name: cv.name, email: cv.email, languages: cv.languages};
     return accumulator;
     }, {});
+
+const myPromise = new Promise( (resolve, reject) => {
+  setTimeout( () => {
+    if (Math.random() > .5) {
+      resolve();
+    } else {
+      reject();
+    }
+  }, 1500);
+});
+console.log(myPromise);
+myPromise.then(()=> console.log('resolved!'));
+myPromise.catch(()=> console.log('rejected!'));
